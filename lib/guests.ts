@@ -5,30 +5,56 @@ export interface Guest {
   confirmed?: boolean
 }
 
-// Guest list - each entry represents one invitation
-// The id is used in the URL: /invite/[id]
-export const GUESTS: Guest[] = [
-  { id: "garcia-lopez", name: "Familia Garcia Lopez", maxGuests: 4 },
-  { id: "martinez-ruiz", name: "Familia Martinez Ruiz", maxGuests: 3 },
-  { id: "rodriguez-perez", name: "Familia Rodriguez Perez", maxGuests: 5 },
+const GOOGLE_SHEETS_DATA_URL = process.env.GOOGLE_SHEETS_CSV_URL
+
+// Guest list - used as fallback if the Google Sheet is not available
+export const FALLBACK_GUESTS: Guest[] = [
   { id: "carlos-maria", name: "Carlos & Maria Hernandez", maxGuests: 2 },
-  { id: "juan-pablo", name: "Juan Pablo Gomez", maxGuests: 1 },
-  { id: "andrea-sanchez", name: "Andrea Sanchez Mejia", maxGuests: 2 },
-  { id: "felipe-lucia", name: "Felipe & Lucia Torres", maxGuests: 2 },
-  { id: "morales-diaz", name: "Familia Morales Diaz", maxGuests: 4 },
-  { id: "sebastian-vargas", name: "Sebastian Vargas", maxGuests: 1 },
-  { id: "valentina-castillo", name: "Valentina Castillo", maxGuests: 2 },
-  { id: "diego-camila", name: "Diego & Camila Restrepo", maxGuests: 2 },
-  { id: "ospina-gutierrez", name: "Familia Ospina Gutierrez", maxGuests: 3 },
-  { id: "natalia-rios", name: "Natalia Rios", maxGuests: 1 },
-  { id: "andres-munoz", name: "Andres Felipe Munoz", maxGuests: 2 },
-  { id: "cardona-valencia", name: "Familia Cardona Valencia", maxGuests: 4 },
 ]
 
-export function getGuestById(id: string): Guest | undefined {
-  return GUESTS.find((g) => g.id === id)
+export async function getGuests(): Promise<Guest[]> {
+  if (!GOOGLE_SHEETS_DATA_URL) {
+    console.warn("GOOGLE_SHEETS_CSV_URL no configurada")
+    return FALLBACK_GUESTS
+  }
+
+  try {
+    const response = await fetch(GOOGLE_SHEETS_DATA_URL, {
+      next: { revalidate: 5 }, // Cache de 5 segundos para pruebas
+    })
+
+    if (!response.ok) {
+      throw new Error("Error al obtener datos de Google Sheets")
+    }
+
+    const data = await response.json()
+
+    // Si los datos vienen como array, los usamos directamente
+    // Si vienen dentro de una propiedad 'data' o 'guests', la extraemos
+    const guestsArray = Array.isArray(data) ? data : (data.data || data.guests || [])
+
+    if (guestsArray.length === 0) return FALLBACK_GUESTS
+
+    // Mapeamos para asegurar que los tipos sean correctos (id string, maxGuests number)
+    return guestsArray.map((g: any) => ({
+      id: String(g.id || "").trim(),
+      name: String(g.name || g.nombre || "").trim(),
+      maxGuests: parseInt(g.maxGuests || g.invitados || 1, 10),
+    }))
+  } catch (error) {
+    console.error("Error loading guests from JSON API:", error)
+    return FALLBACK_GUESTS
+  }
 }
 
-export function getAllGuestIds(): string[] {
-  return GUESTS.map((g) => g.id)
+export async function getGuestById(id: string): Promise<Guest | undefined> {
+  const guests = await getGuests()
+  return guests.find((g) => g.id === id)
 }
+
+export async function getAllGuestIds(): Promise<string[]> {
+  const guests = await getGuests()
+  return guests.map((g) => g.id)
+}
+
+

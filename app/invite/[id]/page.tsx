@@ -8,13 +8,13 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const ids = getAllGuestIds()
+  const ids = await getAllGuestIds()
   return ids.map((id) => ({ id }))
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params
-  const guest = getGuestById(id)
+  const guest = await getGuestById(id)
 
   if (!guest) {
     return { title: "Invitacion no encontrada" }
@@ -50,7 +50,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function InvitePage({ params }: PageProps) {
   const { id } = await params
-  const guest = getGuestById(id)
+  console.log({ id })
+  const guest = await getGuestById(id)
 
   if (!guest) {
     notFound()
