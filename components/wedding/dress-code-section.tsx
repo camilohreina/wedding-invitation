@@ -17,7 +17,7 @@ export function DressCodeSection() {
             Vestimenta
           </p>
           <h2 className="mb-8 text-4xl font-light text-foreground md:text-5xl">
-            Codigo de Vestimenta
+            Código de Vestimenta
           </h2>
         </div>
 
@@ -48,7 +48,7 @@ export function DressCodeSection() {
 
             <p className="mb-6 font-[family-name:var(--font-montserrat)] text-sm font-light leading-relaxed text-muted-foreground">
               Te invitamos a vestir de manera formal y elegante para esta
-              ocasion tan especial.
+              ocasión tan especial.
             </p>
 
             <div className="my-8 border-t border-border pt-6">

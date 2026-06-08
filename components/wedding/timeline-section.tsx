@@ -31,7 +31,7 @@ const TIMELINE_EVENTS = [
   {
     time: "7:00 PM",
     title: "Recepción",
-    description: "Salon Principal",
+    description: "Salón Principal",
     icon: UtensilsCrossed,
   },
   {
