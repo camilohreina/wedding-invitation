@@ -7,7 +7,7 @@ export function GiftsSection() {
   const { ref, isInView } = useInView()
 
   return (
-    <section ref={ref} className="px-4 py-24 md:py-32">
+    <section ref={ref} className="px-4 py-4 md:py-32">
       <div className="mx-auto max-w-3xl text-center">
         <div
           className={`transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"

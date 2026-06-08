@@ -26,10 +26,10 @@ export function FloatingNav() {
         : "bg-transparent py-5"
         }`}
     >
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6">
+      <div className="mx-auto justify-center flex max-w-5xl items-center justify-between px-6">
         <a
           href="#"
-          className="text-lg font-light text-cream transition-opacity hover:opacity-80"
+          className="text-lg  text-center font-light text-cream transition-opacity hover:opacity-80"
         >
           {"Jennifer & Camilo"}
         </a>
@@ -44,12 +44,7 @@ export function FloatingNav() {
             </a>
           ))}
         </div>
-        <a
-          href="#rsvp"
-          className="border border-gold-light/40 px-4 py-1.5 font-[family-name:var(--font-montserrat)] text-[10px] font-medium uppercase tracking-[0.2em] text-cream transition-colors hover:bg-gold-light/10 md:hidden"
-        >
-          RSVP
-        </a>
+
       </div>
     </nav>
   )

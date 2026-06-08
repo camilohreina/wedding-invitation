@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #1a1a2e 0%, #2d2d44 50%, #1a1a2e 100%)",
+          background: "linear-gradient(135deg, #F6F1EB 0%, #D8C8BC 50%, #F6F1EB 100%)",
           fontFamily: "Georgia, serif",
         }}
       >
@@ -30,10 +30,10 @@ export async function GET(request: NextRequest) {
             marginBottom: "24px",
           }}
         >
-          <div style={{ width: "60px", height: "1px", background: "#d4a853" }} />
+          <div style={{ width: "60px", height: "1px", background: "#B3947A" }} />
           <div
             style={{
-              color: "#d4a853",
+              color: "#B3947A",
               fontSize: "18px",
               letterSpacing: "8px",
               textTransform: "uppercase",
@@ -41,13 +41,13 @@ export async function GET(request: NextRequest) {
           >
             Nos Casamos
           </div>
-          <div style={{ width: "60px", height: "1px", background: "#d4a853" }} />
+          <div style={{ width: "60px", height: "1px", background: "#B3947A" }} />
         </div>
 
         {/* Couple names */}
         <div
           style={{
-            color: "#f5f0e8",
+            color: "#6F5648",
             fontSize: "72px",
             fontWeight: 300,
             lineHeight: 1.1,
@@ -67,17 +67,17 @@ export async function GET(request: NextRequest) {
             margin: "20px 0",
           }}
         >
-          <div style={{ width: "40px", height: "1px", background: "#d4a853" }} />
+          <div style={{ width: "40px", height: "1px", background: "#B3947A" }} />
           <div
             style={{
-              color: "#d4a853",
+              color: "#B3947A",
               fontSize: "16px",
               letterSpacing: "4px",
             }}
           >
             26 de Septiembre, 2026
           </div>
-          <div style={{ width: "40px", height: "1px", background: "#d4a853" }} />
+          <div style={{ width: "40px", height: "1px", background: "#B3947A" }} />
         </div>
 
         {/* Divider */}
@@ -85,7 +85,7 @@ export async function GET(request: NextRequest) {
           style={{
             width: "1px",
             height: "30px",
-            background: "#d4a853",
+            background: "#B3947A",
             opacity: 0.5,
             margin: "12px 0",
           }}
@@ -94,7 +94,7 @@ export async function GET(request: NextRequest) {
         {/* Guest name */}
         <div
           style={{
-            color: "#f5f0e8",
+            color: "#B3947A",
             fontSize: "22px",
             fontWeight: 300,
             opacity: 0.9,
@@ -105,7 +105,7 @@ export async function GET(request: NextRequest) {
         </div>
         <div
           style={{
-            color: "#d4a853",
+            color: "#6F5648",
             fontSize: "32px",
             fontWeight: 400,
           }}

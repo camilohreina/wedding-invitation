@@ -14,6 +14,7 @@ import { DressCodeSection } from "@/components/wedding/dress-code-section"
 import { GiftsSection } from "@/components/wedding/gifts-section"
 import { GallerySection } from "@/components/wedding/gallery-section"
 import { RsvpSection } from "@/components/wedding/rsvp-section"
+import { ConfirmationSection } from "@/components/wedding/confirmation-section"
 import { OrnamentalDivider } from "@/components/wedding/ornamental-divider"
 import { Footer } from "@/components/wedding/footer"
 
@@ -68,9 +69,9 @@ export function InvitationClient({ guest }: InvitationClientProps) {
           <GallerySection />
         </section>
 
-        {/* <OrnamentalDivider />
+        <OrnamentalDivider />
 
-        <RsvpSection guest={guest} /> */}
+        <ConfirmationSection />
 
         <Footer />
       </main>
