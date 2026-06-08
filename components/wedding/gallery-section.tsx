@@ -8,9 +8,9 @@ export function GallerySection() {
 
   const images = [
     { src: "/images/fondo.webp", alt: "Decoracion de boda", className: "col-span-2 row-span-2" },
-    { src: "/images/couple.jpg", alt: "Los novios", className: "col-span-1 row-span-1" },
-    { src: "/images/ceremony.jpg", alt: "La ceremonia", className: "col-span-1 row-span-1" },
-    { src: "/images/venue.jpg", alt: "El salon", className: "col-span-2 row-span-1" },
+    { src: "/images/Foto-40.webp", alt: "Los novios", className: "col-span-1 row-span-1" },
+    { src: "/images/Foto-234.webp", alt: "La ceremonia", className: "col-span-1 row-span-1" },
+    { src: "/images/Foto-126.webp", alt: "El salon", className: "col-span-2 row-span-1" },
   ]
 
   return (

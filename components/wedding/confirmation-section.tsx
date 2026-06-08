@@ -6,7 +6,7 @@ export function ConfirmationSection() {
   const { ref, isInView } = useInView()
 
   return (
-    <section id="rsvp" ref={ref} className="bg-cream-dark px-4 py-24 md:py-32">
+    <section id="rsvp" ref={ref} className=" px-4 py-24 md:py-32">
       <div className="mx-auto max-w-2xl text-center">
         <div
           className={`transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
