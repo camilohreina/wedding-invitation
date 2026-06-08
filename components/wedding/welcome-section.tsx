@@ -29,21 +29,21 @@ export function WelcomeSection({ guestName }: WelcomeSectionProps) {
           Nos casamos
         </p>
         <h1
-          className={`mb-2 text-6xl font-light leading-tight text-foreground transition-all duration-1000 md:text-8xl lg:text-9xl ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          className={`mb-2 font-[family-name:var(--font-great-vibes)] text-7xl font-normal leading-tight text-foreground transition-all duration-1000 md:text-8xl lg:text-9xl ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           style={{ transitionDelay: "600ms" }}
         >
           Jennifer
         </h1>
         <p
-          className={`mb-2 font-[family-name:var(--font-montserrat)] text-lg font-light tracking-[0.3em] text-gold transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          className={`mb-2 font-[family-name:var(--font-great-vibes)]  text-lg font-light tracking-[0.3em] text-gold transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           style={{ transitionDelay: "900ms" }}
         >
           &
         </p>
         <h1
-          className={`mb-8 text-6xl font-light leading-tight text-foreground transition-all duration-1000 md:text-8xl lg:text-9xl ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          className={`mb-8 font-[family-name:var(--font-great-vibes)] text-7xl font-normal leading-tight text-foreground transition-all duration-1000 md:text-8xl lg:text-9xl ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           style={{ transitionDelay: "1200ms" }}
         >

@@ -30,14 +30,16 @@ export function HeroSection({ guestName }: HeroSectionProps) {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-foreground/40" />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 bg-foreground/20" />
       </div>
+
+      {/* Gradient overlay placed outside parallax to ensure seamless transition */}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent z-10" />
 
 
 
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="h-6 w-6 text-cream/70" />
+        <ChevronDown className="h-6 w-6 text-foreground/60" />
       </div>
     </section>
   )
