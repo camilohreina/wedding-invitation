@@ -17,7 +17,7 @@ export function GallerySection() {
     <section ref={ref} className="bg-cream-dark px-4 py-24 md:py-32">
       <div className="mx-auto max-w-5xl">
         <div className="mb-16 text-center">
-          <p className="mb-2 font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.4em] text-muted-foreground">
+          <p className="mb-2 font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.4em] text-muted-foreground">
             Momentos
           </p>
           <h2 className="text-4xl font-light text-foreground md:text-5xl lg:text-6xl">

@@ -49,7 +49,7 @@ export function TimelineSection() {
     <section ref={ref} className="px-4 py-24 md:py-32">
       <div className="mx-auto max-w-2xl">
         <div className="mb-16 text-center">
-          <p className="mb-2 font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.4em] text-muted-foreground">
+          <p className="mb-2 font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.4em] text-muted-foreground">
             El programa
           </p>
           <h2 className="text-4xl font-light text-foreground md:text-5xl lg:text-6xl">
@@ -83,13 +83,13 @@ export function TimelineSection() {
                     className={`ml-16 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"
                       }`}
                   >
-                    <span className="font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.2em] text-primary">
+                    <span className="font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.2em] text-primary">
                       {event.time}
                     </span>
-                    <h3 className="mt-1 text-xl font-light text-foreground">
+                    <h3 className="mt-1 text-3xl font-light text-foreground">
                       {event.title}
                     </h3>
-                    <p className="mt-1 font-[family-name:var(--font-montserrat)] text-xs font-light text-muted-foreground">
+                    <p className="mt-1 font-[family-name:var(--font-montserrat)] text-sm font-normal text-muted-foreground">
                       {event.description}
                     </p>
                   </div>
@@ -102,10 +102,10 @@ export function TimelineSection() {
           </div>
         </div>
 
-        <h3 className="mt-8 text-center text-2xl font-light text-foreground md:text-3xl">
+        <h3 className="mt-8 font-[family-name:var(--font-montserrat)] text-center text-base font-light text-foreground md:text-3xl">
           Este es un evento solo para adultos, esperamos celebrarlo con ustedes
         </h3>
-        <h6 className="mt-4 text-center text-xl font-light text-foreground md:text-3xl">
+        <h6 className="mt-4 font-[family-name:var(--font-montserrat)] text-center text-base font-light text-foreground md:text-3xl">
           ¡Gracias por su comprensión!
         </h6>
       </div>

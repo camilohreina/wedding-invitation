@@ -99,11 +99,10 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
           </h2>
           <p className="mb-2 font-[family-name:var(--font-montserrat)] text-sm font-light text-muted-foreground">
             {isAttending
-              ? `Gracias ${guest.name}. ${
-                  parseInt(attendance) === 1
-                    ? "Te esperamos"
-                    : `Los esperamos (${attendance} personas)`
-                } con mucha alegria el 15 de Noviembre de 2026.`
+              ? `Gracias ${guest.name}. ${parseInt(attendance) === 1
+                ? "Te esperamos"
+                : `Los esperamos (${attendance} personas)`
+              } con mucha alegria el 15 de Noviembre de 2026.`
               : `Lamentamos que no puedas asistir, ${guest.name}. Te tendremos presente en nuestro dia especial.`}
           </p>
         </div>
@@ -115,12 +114,11 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
     <section id="rsvp" ref={ref} className="px-4 py-24 md:py-32">
       <div className="mx-auto max-w-lg">
         <div
-          className={`mb-12 text-center transition-all duration-1000 ${
-            isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className={`mb-12 text-center transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
         >
-          <p className="mb-2 font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.4em] text-muted-foreground">
-            Confirmacion
+          <p className="mb-2 font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.4em] text-muted-foreground">
+            Confirmación
           </p>
           <h2 className="mb-2 text-4xl font-light text-foreground md:text-5xl">
             {guest.name}
@@ -130,16 +128,15 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
               ? "Tienes 1 lugar reservado"
               : `Tienes ${guest.maxGuests} lugares reservados`}
           </p>
-          <p className="font-[family-name:var(--font-montserrat)] text-xs font-light text-muted-foreground">
+          <p className="font-[family-name:var(--font-montserrat)] text-xs font-normal text-muted-foreground">
             Por favor confirma antes del 15 de Octubre de 2026
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className={`flex flex-col gap-6 transition-all delay-200 duration-1000 ${
-            isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className={`flex flex-col gap-6 transition-all delay-200 duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
         >
           {/* Attendance selector */}
           <div className="flex flex-col gap-3">
@@ -150,13 +147,12 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
               {attendanceOptions.map((option) => (
                 <label
                   key={option.value}
-                  className={`flex cursor-pointer items-center gap-3 border px-4 py-3.5 transition-all ${
-                    attendance === option.value
-                      ? option.value === "0"
-                        ? "border-muted-foreground/40 bg-muted"
-                        : "border-primary bg-primary/5"
-                      : "border-border bg-card hover:border-primary/30"
-                  }`}
+                  className={`flex cursor-pointer items-center gap-3 border px-4 py-3.5 transition-all ${attendance === option.value
+                    ? option.value === "0"
+                      ? "border-muted-foreground/40 bg-muted"
+                      : "border-primary bg-primary/5"
+                    : "border-border bg-card hover:border-primary/30"
+                    }`}
                 >
                   <input
                     type="radio"
@@ -167,22 +163,20 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
                     className="sr-only"
                   />
                   <div
-                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
-                      attendance === option.value
-                        ? option.value === "0"
-                          ? "border-muted-foreground bg-muted-foreground"
-                          : "border-primary bg-primary"
-                        : "border-border"
-                    }`}
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors ${attendance === option.value
+                      ? option.value === "0"
+                        ? "border-muted-foreground bg-muted-foreground"
+                        : "border-primary bg-primary"
+                      : "border-border"
+                      }`}
                   >
                     {attendance === option.value && (
                       <div className="h-2 w-2 rounded-full bg-primary-foreground" />
                     )}
                   </div>
                   <span
-                    className={`font-[family-name:var(--font-montserrat)] text-sm font-light ${
-                      option.value === "0" ? "text-muted-foreground" : "text-foreground"
-                    }`}
+                    className={`font-[family-name:var(--font-montserrat)] text-sm font-light ${option.value === "0" ? "text-muted-foreground" : "text-foreground"
+                      }`}
                   >
                     {option.label}
                   </span>

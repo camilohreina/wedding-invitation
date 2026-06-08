@@ -62,13 +62,15 @@ export function InvitationClient({ guest }: InvitationClientProps) {
 
         <DressCodeSection />
 
+        <OrnamentalDivider />
+
         <section id="galeria">
           <GallerySection />
         </section>
 
-        <OrnamentalDivider />
+        {/* <OrnamentalDivider />
 
-        <RsvpSection guest={guest} />
+        <RsvpSection guest={guest} /> */}
 
         <Footer />
       </main>

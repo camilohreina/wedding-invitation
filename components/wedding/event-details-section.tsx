@@ -54,16 +54,16 @@ function EventCard({
       <div className="flex flex-col items-center gap-4 p-8 text-center">
         <div className="flex items-center gap-2 text-primary">
           <Clock className="h-4 w-4" />
-          <span className="font-[family-name:var(--font-montserrat)] text-sm font-light">
+          <span className="font-[family-name:var(--font-montserrat)] text-sm font-medium">
             {time}
           </span>
         </div>
 
-        <h3 className="text-2xl font-light text-foreground">{location}</h3>
+        <h3 className="text-2xl font-normal text-foreground">{location}</h3>
 
         <div className="flex items-start gap-2 text-muted-foreground">
           <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-          <span className="font-[family-name:var(--font-montserrat)] text-xs font-light leading-relaxed">
+          <span className="font-[family-name:var(--font-montserrat)] text-sm font-normal leading-relaxed">
             {address}
           </span>
         </div>

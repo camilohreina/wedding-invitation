@@ -14,7 +14,7 @@ export function WelcomeSection({ guestName }: WelcomeSectionProps) {
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-center">
         {guestName && (
           <p
-            className={`mb-6 font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.4em] text-muted-foreground transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            className={`mb-6 font-[family-name:var(--font-montserrat)] text-sm font-medium uppercase tracking-[0.4em] text-muted-foreground transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               }`}
             style={{ transitionDelay: "100ms" }}
           >
@@ -55,7 +55,7 @@ export function WelcomeSection({ guestName }: WelcomeSectionProps) {
           style={{ transitionDelay: "1600ms" }}
         >
           <div className="h-px w-16 bg-gold" />
-          <p className="font-[family-name:var(--font-montserrat)] text-sm font-light tracking-[0.3em] text-muted-foreground">
+          <p className="font-[family-name:var(--font-montserrat)] text-sm font-medium tracking-[0.3em] text-muted-foreground">
             26 de Septiembre, 2026
           </p>
           <div className="h-px w-16 bg-gold" />

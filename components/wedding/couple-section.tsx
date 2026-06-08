@@ -26,14 +26,14 @@ export function CoupleSection() {
               }`}
           >
             <blockquote className="mb-8 border-l-2 border-gold/40 pl-6">
-              <p className="text-2xl font-light italic leading-relaxed text-foreground md:text-3xl">
+              <p className="text-3xl font-light leading-relaxed text-foreground md:text-3xl">
                 {'"El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."'}
               </p>
             </blockquote>
-            <p className="mb-6 font-[family-name:var(--font-montserrat)] text-sm font-light leading-relaxed text-muted-foreground">
+            <p className="mb-6 font-[family-name:var(--font-montserrat)] text-sm font-normal leading-relaxed text-muted-foreground">
               Hoy celebramos el amor que nos unió, los sueños que construimos juntos y el comienzo de una nueva etapa.
             </p>
-            <p className="font-[family-name:var(--font-montserrat)] text-sm font-light leading-relaxed text-muted-foreground">
+            <p className="font-[family-name:var(--font-montserrat)] text-sm font-normal leading-relaxed text-muted-foreground">
               Será un honor compartir este momento tan especial con ustedes.
             </p>
           </div>
