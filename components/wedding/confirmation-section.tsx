@@ -24,6 +24,10 @@ export function ConfirmationSection() {
               Con el propósito de cuidar cada detalle de nuestra celebración, nos comunicaremos telefónicamente para confirmar la asistencia de cada uno de nuestros invitados.
             </p>
           </div>
+
+          <h2 className="mt-14 text-5xl font-light text-foreground  md:text-7xl">
+            ¡Te Esperamos!
+          </h2>
         </div>
       </div>
     </section>
