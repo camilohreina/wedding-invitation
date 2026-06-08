@@ -44,8 +44,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Cormorant Garamond', 'Georgia', serif;
-  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Great Vibes', 'Georgia', serif;
+  --font-serif: 'Great Vibes', 'Georgia', serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
