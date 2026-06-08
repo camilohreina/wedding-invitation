@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 
 function calculateTimeLeft() {
-  const weddingDate = new Date("2026-11-15T16:00:00")
+  const weddingDate = new Date("2026-09-26T16:00:00")
   const now = new Date()
   const difference = weddingDate.getTime() - now.getTime()
 

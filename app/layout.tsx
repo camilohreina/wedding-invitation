@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Camila & Santiago - Nuestra Boda',
+  title: 'Camilo & Jennifer - Nuestra Boda',
   description: 'Te invitamos a celebrar nuestra boda. Confirma tu asistencia y acompanos en este dia tan especial.',
   icons: {
     icon: [

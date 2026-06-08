@@ -1,37 +1,43 @@
 "use client"
 
 import { useInView } from "@/hooks/use-in-view"
-import { Church, Music, UtensilsCrossed, Cake, Heart } from "lucide-react"
+import { Church, Music, UtensilsCrossed, Heart, DoorClosedLocked, Users } from "lucide-react"
 
 const TIMELINE_EVENTS = [
   {
     time: "4:00 PM",
-    title: "Ceremonia Religiosa",
-    description: "Parroquia San Jose",
+    title: "Recepción de invitados",
+    description: "Ubicación para ceremonia",
+    icon: Users,
+  },
+  {
+    time: "4:50 PM",
+    title: "Cierre de puertas",
+    description: "Finca Las Vegas",
+    icon: DoorClosedLocked,
+  },
+  {
+    time: "5:00 PM",
+    title: "Ceremonia religiosa",
+    description: "Finca Las Vegas",
     icon: Church,
   },
   {
-    time: "5:30 PM",
+    time: "6:00 PM",
     title: "Coctel de Bienvenida",
-    description: "Jardines de la Hacienda",
+    description: "Si no puedes asistir a la ceremonia, te esperamos desde esta hora.",
     icon: Music,
   },
   {
-    time: "6:30 PM",
-    title: "Recepcion & Cena",
+    time: "7:00 PM",
+    title: "Recepción",
     description: "Salon Principal",
     icon: UtensilsCrossed,
   },
   {
-    time: "8:00 PM",
-    title: "Partida del Pastel",
-    description: "Un dulce momento juntos",
-    icon: Cake,
-  },
-  {
-    time: "8:30 PM",
-    title: "Primer Baile & Fiesta",
-    description: "A celebrar toda la noche",
+    time: "1:00 AM",
+    title: "Fin de la celebración",
+    description: "",
     icon: Heart,
   },
 ]
@@ -61,9 +67,8 @@ export function TimelineSection() {
               return (
                 <div
                   key={event.title}
-                  className={`relative flex items-start gap-6 transition-all duration-1000 md:gap-0 ${
-                    isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                  } ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  className={`relative flex items-start gap-6 transition-all duration-1000 md:gap-0 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                    } ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                   style={{ transitionDelay: `${i * 150}ms` }}
                 >
                   {/* Icon circle */}
@@ -75,9 +80,8 @@ export function TimelineSection() {
 
                   {/* Content */}
                   <div
-                    className={`ml-16 md:ml-0 md:w-1/2 ${
-                      i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"
-                    }`}
+                    className={`ml-16 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"
+                      }`}
                   >
                     <span className="font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.2em] text-primary">
                       {event.time}

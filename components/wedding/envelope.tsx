@@ -33,11 +33,10 @@ export function Envelope({ guestName, onOpen }: EnvelopeProps) {
       />
 
       <div
-        className={`relative transition-all duration-[1500ms] ease-in-out ${
-          isOpening
+        className={`relative transition-all duration-[1500ms] ease-in-out ${isOpening
             ? "-translate-y-[120vh] scale-50 opacity-0"
             : "translate-y-0 scale-100 opacity-100"
-        }`}
+          }`}
       >
         {/* Envelope Container */}
         <div className="relative mx-auto h-[420px] w-[320px] md:h-[480px] md:w-[380px]">
@@ -74,9 +73,8 @@ export function Envelope({ guestName, onOpen }: EnvelopeProps) {
 
           {/* Top flap (triangle) */}
           <div
-            className={`absolute left-0 right-0 top-0 origin-top transition-transform duration-700 ${
-              isOpening ? "[transform:rotateX(180deg)]" : ""
-            }`}
+            className={`absolute left-0 right-0 top-0 origin-top transition-transform duration-700 ${isOpening ? "[transform:rotateX(180deg)]" : ""
+              }`}
             style={{ zIndex: isOpening ? 0 : 20, perspective: "800px" }}
           >
             <svg viewBox="0 0 380 220" className="w-full" preserveAspectRatio="none">
@@ -134,7 +132,7 @@ export function Envelope({ guestName, onOpen }: EnvelopeProps) {
               className="text-center text-lg font-light tracking-[0.4em] md:text-xl"
               style={{ color: "rgba(255,255,255,0.2)" }}
             >
-              {"C & S"}
+              {"C & J"}
             </p>
           </div>
         </div>

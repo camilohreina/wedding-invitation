@@ -9,9 +9,8 @@ export function DressCodeSection() {
     <section ref={ref} className="px-4 py-24 md:py-32">
       <div className="mx-auto max-w-3xl text-center">
         <div
-          className={`transition-all duration-1000 ${
-            isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className={`transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
         >
           <p className="mb-2 font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.4em] text-muted-foreground">
             Vestimenta
@@ -22,9 +21,8 @@ export function DressCodeSection() {
         </div>
 
         <div
-          className={`mb-12 transition-all delay-200 duration-1000 ${
-            isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className={`mb-12 transition-all delay-200 duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
         >
           <div className="mx-auto max-w-md border border-border bg-card p-10">
             <div className="mb-6 flex items-center justify-center gap-3">
@@ -60,7 +58,7 @@ export function DressCodeSection() {
                   <div className="h-8 w-8 rounded-full border border-border bg-[#8b6f47]" title="Dorado" />
                 </div>
                 <span className="font-[family-name:var(--font-montserrat)] text-[10px] font-light uppercase tracking-wider text-muted-foreground">
-                  Colores sugeridos
+                  Colores a evitar
                 </span>
               </div>
             </div>

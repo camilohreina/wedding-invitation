@@ -31,9 +31,8 @@ function EventCard({
 }: EventCardProps) {
   return (
     <div
-      className={`group overflow-hidden rounded-sm bg-card transition-all duration-1000 ${
-        isInView ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-      }`}
+      className={`group overflow-hidden rounded-sm bg-card transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+        }`}
       style={{ transitionDelay: delay }}
     >
       <div className="relative aspect-[16/10] overflow-hidden">
@@ -102,18 +101,6 @@ export function EventDetailsSection() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <EventCard
-            icon={<Church className="h-4 w-4 text-gold-light" />}
-            title="Ceremonia"
-            time="4:00 PM"
-            location="Parroquia San Jose"
-            address="Calle 80 #45-12, Barrio El Poblado, Medellin, Colombia"
-            mapUrl="https://maps.google.com/?q=Parroquia+San+Jose+Medellin"
-            imageSrc="/images/ceremony.jpg"
-            imageAlt="Iglesia decorada para la ceremonia"
-            delay="0ms"
-            isInView={isInView}
-          />
-          <EventCard
             icon={<PartyPopper className="h-4 w-4 text-gold-light" />}
             title="Recepcion"
             time="6:30 PM"
@@ -125,6 +112,14 @@ export function EventDetailsSection() {
             delay="200ms"
             isInView={isInView}
           />
+          <div className="w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-lg h-[300px] md:h-[450px]">
+            <iframe
+              className="w-full h-full border-0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.8008870088047!2d-76.42021638835953!3d3.632883749971118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a002eea1e4091%3A0x8af3fe2882c1fdc1!2sFinca%20las%20vegas!5e0!3m2!1ses!2sco!4v1780932176601!5m2!1ses!2sco"
+              loading="lazy"
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
     </section>

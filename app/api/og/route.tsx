@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
             marginBottom: "8px",
           }}
         >
-          Camila & Santiago
+          Camilo & Jennifer
         </div>
 
         {/* Date */}
@@ -75,7 +75,7 @@ export async function GET(request: NextRequest) {
               letterSpacing: "4px",
             }}
           >
-            15 de Noviembre, 2026
+            26 de Septiembre, 2026
           </div>
           <div style={{ width: "40px", height: "1px", background: "#d4a853" }} />
         </div>

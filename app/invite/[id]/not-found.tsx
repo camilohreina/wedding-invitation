@@ -8,7 +8,7 @@ export default function NotFound() {
           className="mb-3 font-[family-name:var(--font-montserrat)] text-xs font-light uppercase tracking-[0.4em]"
           style={{ color: "rgba(212,168,83,0.6)" }}
         >
-          Camila & Santiago
+          Camilo & Jennifer
         </p>
         <h1 className="mb-6 text-5xl font-light" style={{ color: "rgba(245,240,232,0.9)" }}>
           Invitacion no encontrada

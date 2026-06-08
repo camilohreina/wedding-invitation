@@ -52,7 +52,7 @@ export function HeroSection({ guestName }: HeroSectionProps) {
           className="mb-2 text-6xl font-light leading-tight text-cream opacity-0 animate-fade-in-up md:text-8xl lg:text-9xl"
           style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
         >
-          Camila
+          Camilo
         </h1>
         <p
           className="mb-2 font-[family-name:var(--font-montserrat)] text-lg font-light tracking-[0.3em] text-gold-light opacity-0 animate-fade-in-up"
@@ -64,7 +64,7 @@ export function HeroSection({ guestName }: HeroSectionProps) {
           className="mb-8 text-6xl font-light leading-tight text-cream opacity-0 animate-fade-in-up md:text-8xl lg:text-9xl"
           style={{ animationDelay: "1.2s", animationFillMode: "forwards" }}
         >
-          Santiago
+          Jennifer
         </h1>
         <div
           className="flex flex-col items-center gap-2 opacity-0 animate-fade-in-up"
@@ -72,7 +72,7 @@ export function HeroSection({ guestName }: HeroSectionProps) {
         >
           <div className="h-px w-16 bg-gold-light" />
           <p className="font-[family-name:var(--font-montserrat)] text-sm font-light tracking-[0.3em] text-cream/80">
-            15 de Noviembre, 2026
+            26 de Septiembre, 2026
           </p>
           <div className="h-px w-16 bg-gold-light" />
         </div>
