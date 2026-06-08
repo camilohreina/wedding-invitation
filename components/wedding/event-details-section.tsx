@@ -106,7 +106,7 @@ export function EventDetailsSection() {
             time="6:30 PM"
             location="Hacienda Los Olivos"
             address="Km 5 Via Las Palmas, Envigado, Antioquia, Colombia"
-            mapUrl="https://maps.google.com/?q=Hacienda+Los+Olivos+Envigado"
+            mapUrl="https://maps.app.goo.gl/cm2WZwo3fhjBqedU9"
             imageSrc="/images/venue.jpg"
             imageAlt="Salon de recepcion elegante"
             delay="200ms"

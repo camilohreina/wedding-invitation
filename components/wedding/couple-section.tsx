@@ -27,18 +27,14 @@ export function CoupleSection() {
           >
             <blockquote className="mb-8 border-l-2 border-gold/40 pl-6">
               <p className="text-2xl font-light italic leading-relaxed text-foreground md:text-3xl">
-                {'"El amor no se mira, se siente, y aun mas cuando ella esta junto a mi."'}
+                {'"El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."'}
               </p>
             </blockquote>
             <p className="mb-6 font-[family-name:var(--font-montserrat)] text-sm font-light leading-relaxed text-muted-foreground">
-              Desde el primer momento en que nos conocimos, supimos que nuestras
-              vidas estaban destinadas a unirse. Despues de anos de amor,
-              risas y aventuras juntos, estamos emocionados de dar el siguiente
-              paso en nuestro camino.
+              Hoy celebramos el amor que nos unió, los sueños que construimos juntos y el comienzo de una nueva etapa.
             </p>
             <p className="font-[family-name:var(--font-montserrat)] text-sm font-light leading-relaxed text-muted-foreground">
-              Queremos compartir este dia tan especial con las personas que mas
-              amamos. Tu presencia hara de nuestra boda un momento inolvidable.
+              Será un honor compartir este momento tan especial con ustedes.
             </p>
           </div>
           <div

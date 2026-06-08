@@ -101,6 +101,13 @@ export function TimelineSection() {
             })}
           </div>
         </div>
+
+        <h3 className="mt-8 text-center text-2xl font-light text-foreground md:text-3xl">
+          Este es un evento solo para adultos, esperamos celebrarlo con ustedes
+        </h3>
+        <h6 className="mt-4 text-center text-xl font-light text-foreground md:text-3xl">
+          ¡Gracias por su comprensión!
+        </h6>
       </div>
     </section>
   )

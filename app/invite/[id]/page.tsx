@@ -50,7 +50,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function InvitePage({ params }: PageProps) {
   const { id } = await params
-  console.log({ id })
   const guest = await getGuestById(id)
 
   if (!guest) {
