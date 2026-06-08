@@ -43,7 +43,7 @@ export function CoupleSection() {
           >
             <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm">
               <Image
-                src="/images/couple.jpg"
+                src="/images/Foto-6.webp"
                 alt="Foto de la pareja"
                 fill
                 className="object-cover"

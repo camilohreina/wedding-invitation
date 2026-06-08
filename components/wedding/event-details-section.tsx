@@ -103,9 +103,9 @@ export function EventDetailsSection() {
           <EventCard
             icon={<PartyPopper className="h-4 w-4 text-gold-light" />}
             title="Recepcion"
-            time="6:30 PM"
-            location="Hacienda Los Olivos"
-            address="Km 5 Via Las Palmas, Envigado, Antioquia, Colombia"
+            time="4:00 PM"
+            location="Finca Las Vegas"
+            address="Rozo, Valle del Cauca"
             mapUrl="https://maps.app.goo.gl/cm2WZwo3fhjBqedU9"
             imageSrc="/images/venue.jpg"
             imageAlt="Salon de recepcion elegante"

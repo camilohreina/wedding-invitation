@@ -7,7 +7,7 @@ export function GallerySection() {
   const { ref, isInView } = useInView()
 
   const images = [
-    { src: "/images/hero-wedding.jpg", alt: "Decoracion de boda", className: "col-span-2 row-span-2" },
+    { src: "/images/fondo.webp", alt: "Decoracion de boda", className: "col-span-2 row-span-2" },
     { src: "/images/couple.jpg", alt: "Los novios", className: "col-span-1 row-span-1" },
     { src: "/images/ceremony.jpg", alt: "La ceremonia", className: "col-span-1 row-span-1" },
     { src: "/images/venue.jpg", alt: "El salon", className: "col-span-2 row-span-1" },
@@ -29,9 +29,8 @@ export function GallerySection() {
           {images.map((img, i) => (
             <div
               key={i}
-              className={`${img.className} group relative overflow-hidden rounded-sm transition-all duration-1000 ${
-                isInView ? "scale-100 opacity-100" : "scale-95 opacity-0"
-              }`}
+              className={`${img.className} group relative overflow-hidden rounded-sm transition-all duration-1000 ${isInView ? "scale-100 opacity-100" : "scale-95 opacity-0"
+                }`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
               <div className="relative aspect-square w-full overflow-hidden">

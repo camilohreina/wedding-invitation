@@ -24,13 +24,14 @@ export function HeroSection({ guestName }: HeroSectionProps) {
         style={{ transform: `translateY(${scrollY * 0.3}px)` }}
       >
         <Image
-          src="/images/hero-wedding.jpg"
+          src="/images/Foto-83.webp"
           alt="Escenario elegante de boda"
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-foreground/40" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
