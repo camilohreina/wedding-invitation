@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
             marginBottom: "8px",
           }}
         >
-          Camilo & Jennifer
+          Jennifer & Camilo
         </div>
 
         {/* Date */}

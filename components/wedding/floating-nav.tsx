@@ -22,8 +22,8 @@ export function FloatingNav() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-foreground/90 py-3 shadow-lg backdrop-blur-md"
-          : "bg-transparent py-5"
+        ? "bg-foreground/90 py-3 shadow-lg backdrop-blur-md"
+        : "bg-transparent py-5"
         }`}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6">
@@ -31,7 +31,7 @@ export function FloatingNav() {
           href="#"
           className="text-lg font-light text-cream transition-opacity hover:opacity-80"
         >
-          {"C & J"}
+          {"Jennifer & Camilo"}
         </a>
         <div className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) => (

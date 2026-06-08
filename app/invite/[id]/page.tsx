@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Invitacion no encontrada" }
   }
 
-  const title = `Camilo & Jennifer - Invitacion para ${guest.name}`
-  const description = `${guest.name}, estas cordialmente invitado(a) a la boda de Camilo & Jennifer. 26 de Septiembre, 2026.`
+  const title = `Jennifer & Camilo - Invitacion para ${guest.name}`
+  const description = `${guest.name}, estas cordialmente invitado(a) a la boda de Jennifer & Camilo. 26 de Septiembre, 2026.`
 
   return {
     title,

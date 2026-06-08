@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto max-w-md">
         <Heart className="mx-auto mb-4 h-5 w-5 text-gold-light" />
         <p className="mb-2 text-3xl font-light text-cream">
-          {"Camilo & Jennifer"}
+          {"Jennifer & Camilo"}
         </p>
         <p className="mb-6 font-[family-name:var(--font-montserrat)] text-xs font-light tracking-[0.3em] text-cream/60">
           26 de Septiembre, 2026

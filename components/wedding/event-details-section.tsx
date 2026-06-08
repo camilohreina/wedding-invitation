@@ -92,10 +92,10 @@ export function EventDetailsSection() {
             Los detalles
           </p>
           <h2 className="mb-4 text-4xl font-light text-foreground md:text-5xl lg:text-6xl">
-            Ceremonia & Recepcion
+            Ceremonia & Recepción
           </h2>
           <p className="mx-auto max-w-lg font-[family-name:var(--font-montserrat)] text-sm font-light text-muted-foreground">
-            Acompananos en este dia tan especial para celebrar nuestro amor
+            Acompáñanos en este día tan especial para celebrar nuestro amor
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export function EventDetailsSection() {
             location="Finca Las Vegas"
             address="Rozo, Valle del Cauca"
             mapUrl="https://maps.app.goo.gl/cm2WZwo3fhjBqedU9"
-            imageSrc="/images/venue.jpg"
+            imageSrc="/images/lugar.jpeg"
             imageAlt="Salon de recepcion elegante"
             delay="200ms"
             isInView={isInView}

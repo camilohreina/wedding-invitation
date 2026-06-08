@@ -5,6 +5,7 @@ import type { Guest } from "@/lib/guests"
 import { Envelope } from "@/components/wedding/envelope"
 import { FloatingNav } from "@/components/wedding/floating-nav"
 import { HeroSection } from "@/components/wedding/hero-section"
+import { WelcomeSection } from "@/components/wedding/welcome-section"
 import { CountdownSection } from "@/components/wedding/countdown-section"
 import { CoupleSection } from "@/components/wedding/couple-section"
 import { EventDetailsSection } from "@/components/wedding/event-details-section"
@@ -35,6 +36,7 @@ export function InvitationClient({ guest }: InvitationClientProps) {
       >
         <FloatingNav />
         <HeroSection guestName={guest.name} />
+        <WelcomeSection guestName={guest.name} />
         <CountdownSection />
 
         <section id="nosotros">
