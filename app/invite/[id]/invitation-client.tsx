@@ -71,7 +71,11 @@ export function InvitationClient({ guest }: InvitationClientProps) {
 
         <OrnamentalDivider />
 
-        <ConfirmationSection />
+        {/* <ConfirmationSection /> */}
+
+        <section id="rsvp">
+          <RsvpSection guest={guest} />
+        </section>
 
         <Footer />
       </main>

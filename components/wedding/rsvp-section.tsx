@@ -14,7 +14,7 @@ interface RsvpSectionProps {
 export function RsvpSection({ guest }: RsvpSectionProps) {
   const { ref, isInView } = useInView()
   const [attendance, setAttendance] = useState<string>("")
-  const [dietary, setDietary] = useState("")
+  const [eventStatus, setEventStatus] = useState("")
   const [message, setMessage] = useState("")
   const [status, setStatus] = useState<RsvpStatus>("idle")
   const [errorMessage, setErrorMessage] = useState("")
@@ -57,16 +57,24 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
     setStatus("loading")
     setErrorMessage("")
 
+
+    console.log(JSON.stringify({
+      guestId: guest.id,
+      name: guest.name,
+      attending: parseInt(attendance),
+      maxGuests: guest.maxGuests,
+      eventStatus,
+      message,
+    }))
+
     try {
-      const res = await fetch("/api/rsvp", {
+      const res = await fetch("/api/confirm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          guestId: guest.id,
-          name: guest.name,
-          attending: parseInt(attendance),
-          maxGuests: guest.maxGuests,
-          dietary,
+          slug: guest.id,
+          guest: parseInt(attendance),
+          status: eventStatus,
           message,
         }),
       })
@@ -102,13 +110,18 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
               ? `Gracias ${guest.name}. ${parseInt(attendance) === 1
                 ? "Te esperamos"
                 : `Los esperamos (${attendance} personas)`
-              } con mucha alegria el 15 de Noviembre de 2026.`
+              } con mucha alegria el 26 de septiembre de 2026.`
               : `Lamentamos que no puedas asistir, ${guest.name}. Te tendremos presente en nuestro dia especial.`}
           </p>
         </div>
       </section>
     )
   }
+
+  const eventStatusOptions = [
+    { value: "CEREMONIA", label: "Asistiré a la ceremonia religiosa y fiesta" },
+    { value: "FIESTA", label: "Solo asistiré a la fiesta" },
+  ]
 
   return (
     <section id="rsvp" ref={ref} className="px-4 py-24 md:py-32">
@@ -117,7 +130,7 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
           className={`mb-12 text-center transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
         >
-          <p className="mb-2 font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.4em] text-muted-foreground">
+          <p className="mb-4 font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.4em] text-muted-foreground">
             Confirmación
           </p>
           <h2 className="mb-2 text-4xl font-light text-foreground md:text-5xl">
@@ -128,9 +141,11 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
               ? "Tienes 1 lugar reservado"
               : `Tienes ${guest.maxGuests} lugares reservados`}
           </p>
-          <p className="font-[family-name:var(--font-montserrat)] text-xs font-normal text-muted-foreground">
-            Por favor confirma antes del 15 de Octubre de 2026
-          </p>
+          <div className="mx-auto max-w-xl">
+            <p className="font-[family-name:var(--font-montserrat)] text-sm font-normal leading-relaxed text-muted-foreground">
+              Con el propósito de cuidar cada detalle de nuestra celebración, también nos comunicaremos telefónicamente para confirmar la asistencia de cada uno de nuestros invitados.
+            </p>
+          </div>
         </div>
 
         <form
@@ -185,27 +200,46 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
             </div>
           </div>
 
-          {/* Only show dietary + message if attending */}
+          {/* Only show eventStatus + message if attending */}
           {attendance !== "" && attendance !== "0" && (
             <>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="dietary"
-                  className="font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.15em] text-foreground"
-                >
-                  Restricciones alimentarias
-                  <span className="ml-1 font-light normal-case tracking-normal text-muted-foreground">
-                    (opcional)
-                  </span>
+              <div className="flex flex-col gap-3">
+                <label className="font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.15em] text-foreground">
+                  ¿A qué parte del evento asistirás?
                 </label>
-                <input
-                  id="dietary"
-                  type="text"
-                  placeholder="Ej: Vegetariano, sin gluten..."
-                  value={dietary}
-                  onChange={(e) => setDietary(e.target.value)}
-                  className="border border-border bg-card px-4 py-3 font-[family-name:var(--font-montserrat)] text-sm font-light text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary"
-                />
+                <div className="flex flex-col gap-2">
+                  {eventStatusOptions.map((option) => (
+                    <label
+                      key={option.value}
+                      className={`flex cursor-pointer items-center gap-3 border px-4 py-3.5 transition-all ${eventStatus === option.value
+                        ? "border-primary bg-primary/5"
+                        : "border-border bg-card hover:border-primary/30"
+                        }`}
+                    >
+                      <input
+                        type="radio"
+                        name="eventStatus"
+                        value={option.value}
+                        checked={eventStatus === option.value}
+                        onChange={(e) => setEventStatus(e.target.value)}
+                        className="sr-only"
+                      />
+                      <div
+                        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors ${eventStatus === option.value
+                          ? "border-primary bg-primary"
+                          : "border-border"
+                          }`}
+                      >
+                        {eventStatus === option.value && (
+                          <div className="h-2 w-2 rounded-full bg-primary-foreground" />
+                        )}
+                      </div>
+                      <span className="font-[family-name:var(--font-montserrat)] text-sm font-light text-foreground">
+                        {option.label}
+                      </span>
+                    </label>
+                  ))}
+                </div>
               </div>
 
               <div className="flex flex-col gap-2">
@@ -214,9 +248,6 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
                   className="font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.15em] text-foreground"
                 >
                   Mensaje para los novios
-                  <span className="ml-1 font-light normal-case tracking-normal text-muted-foreground">
-                    (opcional)
-                  </span>
                 </label>
                 <textarea
                   id="message"
@@ -253,7 +284,12 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
             )}
           </button>
         </form>
+
+        <h2 className="mt-14 text-center text-5xl font-light text-foreground  md:text-7xl">
+          ¡Te Esperamos!
+        </h2>
       </div>
+
     </section>
   )
 }

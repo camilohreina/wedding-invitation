@@ -33,7 +33,7 @@ export function FloatingNav() {
         >
           {"Jennifer & Camilo"}
         </a>
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.label}

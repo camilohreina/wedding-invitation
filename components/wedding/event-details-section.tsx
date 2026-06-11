@@ -108,7 +108,7 @@ export function EventDetailsSection() {
             address="Rozo, Valle del Cauca"
             mapUrl="https://maps.app.goo.gl/cm2WZwo3fhjBqedU9"
             imageSrc="/images/lugar.jpeg"
-            imageAlt="Salon de recepcion elegante"
+            imageAlt="Salón de recepcion elegante"
             delay="200ms"
             isInView={isInView}
           />
