@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useInView } from "@/hooks/use-in-view"
 import { Check, Loader2 } from "lucide-react"
 import type { Guest } from "@/lib/guests"
@@ -18,6 +18,26 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
   const [message, setMessage] = useState("")
   const [status, setStatus] = useState<RsvpStatus>("idle")
   const [errorMessage, setErrorMessage] = useState("")
+
+  // Check on mount if the guest has already confirmed
+  useEffect(() => {
+    async function checkConfirmation() {
+      try {
+        const res = await fetch(`/api/confirm?slug=${guest.id}`)
+        if (!res.ok) return
+        const data = await res.json()
+        if (data.confirmed) {
+          // Restore attendance so the success message renders correctly
+          const guests = data.data?.guest
+          setAttendance(guests != null ? String(guests) : "1")
+          setStatus("success")
+        }
+      } catch {
+        // silently ignore — just show the form
+      }
+    }
+    checkConfirmation()
+  }, [guest.id])
 
   // Build attendance options dynamically based on maxGuests
   function getAttendanceOptions() {
