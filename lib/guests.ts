@@ -3,6 +3,7 @@ export interface Guest {
   name: string
   maxGuests: number // maximum number of people in this invitation
   confirmed?: boolean
+  dueDate?: string // confirmation deadline, e.g. "14 julio 2026"
 }
 
 const GOOGLE_SHEETS_DATA_URL = process.env.GOOGLE_SHEETS_CSV_URL
@@ -40,6 +41,7 @@ export async function getGuests(): Promise<Guest[]> {
       id: String(g.id || "").trim(),
       name: String(g.name || g.nombre || "").trim(),
       maxGuests: parseInt(g.maxGuests || g.invitados || 1, 10),
+      dueDate: g.due_date ? String(g.due_date).trim() : undefined,
     }))
   } catch (error) {
     console.error("Error loading guests from JSON API:", error)

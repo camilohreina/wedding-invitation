@@ -102,13 +102,13 @@ export function EventDetailsSection() {
         <div className="grid gap-8 md:grid-cols-2">
           <EventCard
             icon={<PartyPopper className="h-4 w-4 text-gold-light" />}
-            title="Recepcion"
+            title="Recepción"
             time="4:00 PM"
             location="Finca Las Vegas"
             address="Rozo, Valle del Cauca"
             mapUrl="https://maps.app.goo.gl/cm2WZwo3fhjBqedU9"
             imageSrc="/images/lugar.jpeg"
-            imageAlt="Salón de recepcion elegante"
+            imageAlt="Salón de recepción elegante"
             delay="200ms"
             isInView={isInView}
           />

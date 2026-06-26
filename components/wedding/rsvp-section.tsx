@@ -2,8 +2,27 @@
 
 import { useState, useEffect } from "react"
 import { useInView } from "@/hooks/use-in-view"
-import { Check, Loader2 } from "lucide-react"
+import { Check, Loader2, Clock, CalendarX } from "lucide-react"
 import type { Guest } from "@/lib/guests"
+
+/**
+ * Parses a Spanish-locale date string like "14 julio 2026" into a Date.
+ * Returns null if the string cannot be parsed.
+ */
+function parseSpanishDate(dateStr: string): Date | null {
+  const MONTHS: Record<string, number> = {
+    enero: 0, febrero: 1, marzo: 2, abril: 3, mayo: 4, junio: 5,
+    julio: 6, agosto: 7, septiembre: 8, octubre: 9, noviembre: 10, diciembre: 11,
+  }
+  const parts = dateStr.trim().toLowerCase().split(/\s+/)
+  if (parts.length !== 3) return null
+  const day = parseInt(parts[0], 10)
+  const month = MONTHS[parts[1]]
+  const year = parseInt(parts[2], 10)
+  if (isNaN(day) || month === undefined || isNaN(year)) return null
+  // Deadline is end-of-day on the due date
+  return new Date(year, month, day, 23, 59, 59)
+}
 
 type RsvpStatus = "idle" | "loading" | "success" | "error"
 
@@ -113,6 +132,12 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
     }
   }
 
+  // ── Due-date logic ──────────────────────────────────────────────────────
+  const deadlineDate = guest.dueDate ? parseSpanishDate(guest.dueDate) : null
+  const now = new Date()
+  const deadlinePassed = deadlineDate !== null && now > deadlineDate
+  // ────────────────────────────────────────────────────────────────────────
+
   if (status === "success") {
     const isAttending = parseInt(attendance) > 0
 
@@ -137,6 +162,36 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
       </section>
     )
   }
+
+  // ── Deadline expired & not confirmed → block the form ───────────────────
+  if (deadlinePassed) {
+    return (
+      <section id="rsvp" className="px-4 py-24 md:py-32">
+        <div className="mx-auto max-w-lg text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-muted">
+            <CalendarX className="h-8 w-8 text-muted-foreground" />
+          </div>
+          <p className="mb-3 font-[family-name:var(--font-montserrat)] text-xs font-medium uppercase tracking-[0.4em] text-muted-foreground">
+            Confirmación
+          </p>
+          <h2 className="mb-6 text-4xl font-light text-foreground md:text-5xl">
+            {guest.name}
+          </h2>
+          <p className="font-[family-name:var(--font-montserrat)] text-sm font-normal leading-relaxed text-muted-foreground">
+            El plazo para confirmar tu asistencia venció el{" "}
+            <span className="font-medium text-foreground">{guest.dueDate}</span>.
+            Lamentablemente ya no es posible registrar tu confirmación, tu lugar será
+            reasignado.{" "}
+            ¡Gracias por ser parte de este momento tan especial para nosotros!
+          </p>
+          <h2 className="mt-14 text-5xl font-light text-foreground md:text-7xl">
+            ¡Gracias!
+          </h2>
+        </div>
+      </section>
+    )
+  }
+  // ────────────────────────────────────────────────────────────────────────
 
   const eventStatusOptions = [
     { value: "CEREMONIA", label: "Asistiré a la ceremonia religiosa y fiesta" },
@@ -166,6 +221,18 @@ export function RsvpSection({ guest }: RsvpSectionProps) {
               Con el propósito de cuidar cada detalle de nuestra celebración, también nos comunicaremos telefónicamente para confirmar la asistencia de cada uno de nuestros invitados.
             </p>
           </div>
+
+          {/* Due-date notice */}
+          {guest.dueDate && !deadlinePassed && (
+            <div className="mt-6 flex items-start gap-3 rounded-none border border-primary/30 bg-primary/5 px-4 py-3 text-left">
+              <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <p className="font-[family-name:var(--font-montserrat)] text-xs font-normal leading-relaxed text-foreground">
+                Por favor confirma tu asistencia antes del{" "}
+                <span className="font-semibold">{guest.dueDate}</span>.{" "}
+                Después de esa fecha tu lugar podría ser reasignado.
+              </p>
+            </div>
+          )}
         </div>
 
         <form
